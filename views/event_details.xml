@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="event_details">
+            <t t-call="website.layout">
+                <div class="container">
+                    <div id="website" class="oe_structure oe_empty">
+                        <section class="vh-100 gradient-custom" data-vcss="001"
+                                 data-snippet="s_website_form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <br></br>
+                                    <h1 style="text-align:center;">Event
+                                        Details
+                                    </h1>
+                                    <br></br>
+                                    <div class="row">
+                                        <center>
+                                            <div class="col-md-3">
+                                                <t t-foreach="event_id or []"
+                                                   t-as="event">
+                                                    <img style="width:440px;height:320px;margin-left: -65px"
+                                                         t-attf-src="/web/image/event.booking/{{event.id}}/image"
+                                                         alt="Card image cap">
+                                                    </img>
+                                                    <br></br>
+                                                    <br></br>
+                                                    Customer:
+                                                    <t t-esc="event.customer_id.name"></t>
+                                                    <br></br>
+                                                    Event:
+                                                    <t t-esc="event.type_id.name"></t>
+                                                    <br></br>
+                                                    Start Date:
+                                                    <t t-esc="event.start_date"></t>
+                                                    <br></br>
+                                                    End Date:
+                                                    <t t-esc="event.end_date"></t>
+                                                    <br></br>
+                                                    Duration:
+                                                    <t t-esc="event.duration"></t>
+                                                    <br></br>
+                                                    <br></br>
+                                                </t>
+                                            </div>
+                                        </center>
+                                    </div>
+                                    <br></br>
+                                    <br></br>
+                                </div>
+                            </div>
+
+
+                            <!--                            <div style="align-items: center; justify-content:center"-->
+                            <!--                                 class="container py-5 h-100">-->
+                            <!--&lt;!&ndash;                                <form>&ndash;&gt;-->
+                            <!--                                    <center><h1>Event Details</h1></center>-->
+                            <!--                                    <div class="card">-->
+                            <!--                                        <div class="card">-->
+                            <!--                                    <t t-foreach="event_id or []" t-as="event">-->
+                            <!--                                         <img class="card-img-top"-->
+                            <!--                                    t-attf-src="/web/image/event.type/{{event.id}}/image"-->
+                            <!--                                    alt="Card image cap">-->
+                            <!--                                                 </img>-->
+                            <!--                                        Customer:-->
+                            <!--                                        <t t-esc="event.customer_id.name"></t>-->
+                            <!--                                        <br></br>-->
+                            <!--                                        Type:-->
+                            <!--                                        <t t-esc="event.type_id.name"></t>-->
+                            <!--                                        <br></br>-->
+                            <!--                                        Start Date:-->
+                            <!--                                        <t t-esc="event.start_date"></t>-->
+                            <!--                                        <br></br>-->
+                            <!--                                        End Date:-->
+                            <!--                                        <t t-esc="event.end_date"></t>-->
+                            <!--                                    </t>-->
+                            <!--                                    &lt;!&ndash;                                <span t-esc="event.name"></span>&ndash;&gt;-->
+                            <!--                                    </div>-->
+                            <!--                                        </div>-->
+                            <!--&lt;!&ndash;                                </form>&ndash;&gt;-->
+                            <!--                            </div>-->
+                            <!--                            -->
+
+
+                        </section>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

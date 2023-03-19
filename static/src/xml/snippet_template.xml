@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve" name="Latest Events">
+    <t t-name="latest_events.event_template">
+        <section class="container dynamic_snippet_blog">
+            <div class="row">
+                <div class="col-md-12">
+                    <br></br>
+                    <h1 style="text-align:center;">LATEST 4 EVENTS</h1>
+                    <br></br>
+                    <div class="row">
+                    <t t-foreach="name" t-as="event">
+                        <div class="card col-md-3">
+                            <form action="/latest_events/event_details"
+                                  method="post" enctype="multipart/form-data"
+                                  class="o_mark_required">
+                                <br></br>
+                                <img class="card-img-top"
+                                     t-attf-src="/web/image/event.booking/{{name[event]}}/image"
+                                     alt="Card image cap">
+                                </img>
+                                <div class="card-body">
+                                    <span t-esc="event"></span>
+                                    <input type="hidden" name="event_id"
+                                           t-att-value="name[event]"></input>
+                                </div>
+                                <center>
+                                    <button type="submit"
+                                            style="background-color:#71639e;border-radius:5px;margin-top: 10px;">Details</button>
+                                </center>
+                                <br></br>
+                            </form>
+                        </div>
+                    </t>
+                    </div>
+                    <br></br>
+                    <br></br>
+                </div>
+            </div>
+        </section>
+    </t>
+</templates>
